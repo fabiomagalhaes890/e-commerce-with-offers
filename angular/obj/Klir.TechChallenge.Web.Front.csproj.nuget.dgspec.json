@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\e4bar\\Desktop\\OneDrive\\KlirStuff\\_RH\\Tech Challenge\\KlirTechChallenge\\angular\\Klir.TechChallenge.Web.Front.csproj": {}
+    "D:\\KLIR\\klirTest\\angular\\Klir.TechChallenge.Web.Front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\e4bar\\Desktop\\OneDrive\\KlirStuff\\_RH\\Tech Challenge\\KlirTechChallenge\\angular\\Klir.TechChallenge.Web.Front.csproj": {
+    "D:\\KLIR\\klirTest\\angular\\Klir.TechChallenge.Web.Front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\e4bar\\Desktop\\OneDrive\\KlirStuff\\_RH\\Tech Challenge\\KlirTechChallenge\\angular\\Klir.TechChallenge.Web.Front.csproj",
+        "projectUniqueName": "D:\\KLIR\\klirTest\\angular\\Klir.TechChallenge.Web.Front.csproj",
         "projectName": "Klir.TechChallenge.Web.Front",
-        "projectPath": "C:\\Users\\e4bar\\Desktop\\OneDrive\\KlirStuff\\_RH\\Tech Challenge\\KlirTechChallenge\\angular\\Klir.TechChallenge.Web.Front.csproj",
-        "packagesPath": "C:\\Users\\e4bar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\e4bar\\Desktop\\OneDrive\\KlirStuff\\_RH\\Tech Challenge\\KlirTechChallenge\\angular\\obj\\",
+        "projectPath": "D:\\KLIR\\klirTest\\angular\\Klir.TechChallenge.Web.Front.csproj",
+        "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
+        "outputPath": "D:\\KLIR\\klirTest\\angular\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\e4bar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -57,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
