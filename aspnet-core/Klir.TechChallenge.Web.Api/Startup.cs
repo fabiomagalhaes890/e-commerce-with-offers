@@ -1,6 +1,9 @@
+using Klir.TechChallenge.Infrastructure.Context;
+using Klir.TechChallenge.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,16 +29,20 @@ namespace KlirTechChallenge.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
             {
-                options.AddPolicy(name: AllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("http://localhost:4200");
-                                  });
-            });
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
 
             services.AddControllers();
+
+            var connectionString = Configuration.GetConnectionString("default");
+            services.AddDbContext<KlirDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddScoped<DbContext, KlirDbContext>();
+
+            services.RegisterServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
