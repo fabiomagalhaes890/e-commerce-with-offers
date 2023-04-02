@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Web.Api"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Tests", "aspnet-core\Klir.TechChallenge.Tests\Klir.TechChallenge.Tests.csproj", "{2698738B-6626-4968-814F-6B22068ACAEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Domain", "aspnet-core\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj", "{434EF5BA-D9D2-4C2D-8156-805C68FD638F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Infrastructure", "aspnet-core\Klir.TechChallenge.Infrastructure\Klir.TechChallenge.Infrastructure.csproj", "{BAFDCB81-F45F-4C1B-850F-FABF938C8892}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{2698738B-6626-4968-814F-6B22068ACAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2698738B-6626-4968-814F-6B22068ACAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2698738B-6626-4968-814F-6B22068ACAEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434EF5BA-D9D2-4C2D-8156-805C68FD638F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434EF5BA-D9D2-4C2D-8156-805C68FD638F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434EF5BA-D9D2-4C2D-8156-805C68FD638F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434EF5BA-D9D2-4C2D-8156-805C68FD638F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{82716132-B9B0-4629-9D72-6D5E42F3EEDD} = {F332D047-B9A7-4B85-8359-9328589BED29}
 		{2698738B-6626-4968-814F-6B22068ACAEF} = {999D48DF-22BC-40B8-A8C4-A9B5760B77AC}
+		{434EF5BA-D9D2-4C2D-8156-805C68FD638F} = {F332D047-B9A7-4B85-8359-9328589BED29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B22C9792-C11E-4F83-91D8-5ACFDDC0FC5E}
