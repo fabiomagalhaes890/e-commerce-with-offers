@@ -8,9 +8,12 @@ namespace Klir.TechChallenge.Tests.Domain.AggregateModel.Offers
     public class OfferTest
     {
         [Theory]
+        [InlineData(2, 1, 20, 20, 0)]
         [InlineData(2, 2, 20, 20, 20)]
         [InlineData(2, 3, 20, 20, 20)]
         [InlineData(2, 4, 20, 20, 40)]
+        [InlineData(3, 1, 4, 10, 0)]
+        [InlineData(3, 2, 4, 10, 0)]
         [InlineData(3, 3, 4, 10, 2)]
         [InlineData(3, 4, 4, 10, 2)]
         [InlineData(3, 5, 4, 10, 2)]

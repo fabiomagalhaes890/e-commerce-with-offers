@@ -38,6 +38,8 @@ namespace KlirTechChallenge.Web.Api
 
             services.AddControllers();
 
+            services.AddSwaggerGen();
+
             var connectionString = Configuration.GetConnectionString("default");
             services.AddDbContext<KlirDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<DbContext, KlirDbContext>();
@@ -51,6 +53,8 @@ namespace KlirTechChallenge.Web.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseRouting();

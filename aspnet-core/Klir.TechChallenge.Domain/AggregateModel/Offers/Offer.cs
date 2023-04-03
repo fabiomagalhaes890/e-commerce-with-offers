@@ -11,14 +11,14 @@ namespace Klir.TechChallenge.Domain.AggregateModel.Offers
         public string Name { get; set; }
         public bool Status { get; set; }
 
-        public decimal CalculateDiscount(int count, decimal price)
+        public decimal CalculateDiscount(int quantityPurchased, decimal productPrice)
         {
-            int promotionalAmount = count / this.Quantity;
-            int amount = count % this.Quantity;
+            int promotionalAmount = quantityPurchased / this.Quantity;
+            int amount = quantityPurchased % this.Quantity;
             decimal promotionalPrice = promotionalAmount * this.Price;
-            decimal totalPrice = amount * price;
+            decimal totalPrice = amount * productPrice;
 
-            return (count * price) - (promotionalPrice + totalPrice);
+            return (quantityPurchased * productPrice) - (promotionalPrice + totalPrice);
         }
     }
 }

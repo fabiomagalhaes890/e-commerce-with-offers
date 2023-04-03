@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Infrastructure", "aspnet-core\Klir.TechChallenge.Infrastructure\Klir.TechChallenge.Infrastructure.csproj", "{BAFDCB81-F45F-4C1B-850F-FABF938C8892}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Application", "aspnet-core\Klir.TechChallenge.Application\Klir.TechChallenge.Application.csproj", "{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.CrossCutting", "Klir.TechChallenge.CrossCutting\Klir.TechChallenge.CrossCutting.csproj", "{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAFDCB81-F45F-4C1B-850F-FABF938C8892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +58,8 @@ Global
 		{2698738B-6626-4968-814F-6B22068ACAEF} = {999D48DF-22BC-40B8-A8C4-A9B5760B77AC}
 		{434EF5BA-D9D2-4C2D-8156-805C68FD638F} = {F332D047-B9A7-4B85-8359-9328589BED29}
 		{BAFDCB81-F45F-4C1B-850F-FABF938C8892} = {F332D047-B9A7-4B85-8359-9328589BED29}
+		{50F04D84-24CB-4E00-B3DE-14BCB9F7353F} = {F332D047-B9A7-4B85-8359-9328589BED29}
+		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7} = {F332D047-B9A7-4B85-8359-9328589BED29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B22C9792-C11E-4F83-91D8-5ACFDDC0FC5E}
