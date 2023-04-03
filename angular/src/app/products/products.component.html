@@ -1,0 +1,17 @@
+<div style="margin: 10px">
+    <h2>Products</h2>
+    <hr>
+    <div class="row">
+        <div class="col-12" style="padding-bottom: 15px">
+            <app-cart-button [total]="totalItems" style="float: right;"></app-cart-button>
+            <button class="btn btn-secondary btn-sm" (click)="Clear()" style="float: right; margin-right: 5px;">Clear Shopcart</button>
+        </div>
+        <div class="col-12">            
+            <app-list 
+                [items]="products"
+                (sendItem)="Buy($event)"
+                buttonName="Buy">
+            </app-list>
+        </div>
+    </div>
+</div>

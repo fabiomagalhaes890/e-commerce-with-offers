@@ -3,23 +3,15 @@ using Klir.TechChallenge.Infrastructure.Errors;
 using Klir.TechChallenge.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KlirTechChallenge.Web.Api
-{
+{   
     public class Startup
     {
-        readonly string AllowSpecificOrigins = "_allowSpecificOrigins";
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -67,7 +59,7 @@ namespace KlirTechChallenge.Web.Api
 
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
-            app.UseCors(AllowSpecificOrigins);
+            app.UseCors();
 
             app.UseAuthorization();
 

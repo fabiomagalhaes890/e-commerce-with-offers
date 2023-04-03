@@ -1,0 +1,12 @@
+<div style="margin: 10px">
+    <h2>Product List</h2>
+    <div class="row">
+        <div class="col-12">            
+            <app-list 
+                [items]="products"
+                (sendItem)="ManageProduct($event)"
+                buttonName="Manage Product">
+            </app-list>
+        </div>
+    </div>
+</div>

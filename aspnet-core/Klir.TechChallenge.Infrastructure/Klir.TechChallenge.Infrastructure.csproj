@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Klir.TechChallenge.CrossCutting\Klir.TechChallenge.CrossCutting.csproj" />
+    <ProjectReference Include="..\Klir.TechChallenge.CrossCutting\Klir.TechChallenge.CrossCutting.csproj" />
     <ProjectReference Include="..\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj" />
   </ItemGroup>
 

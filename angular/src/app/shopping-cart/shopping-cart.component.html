@@ -1,0 +1,59 @@
+<div style="margin: 10px">
+    <div class="row">
+        <div class="col-8">
+            <h2>Checkout</h2>
+        </div>
+        <div class="col-offset-4">
+            <h2>Summary</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-secondary btn-sm" (click)="BackShopping()">Go Back shopping</button>
+        </div>
+        <hr style="padding-bottom: 15px">
+        <div class="col-8">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total price</th>
+                    <th scope="col">Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of shoppingCart.products">
+                    <th scope="row">{{item.product.id}}</th>
+                    <td>{{item.product.name}}</td>
+                    <td>{{item.product.price | currency:'EUR' }}</td>
+                    <td>{{item.count }}</td>
+                    <td>{{item.totalPrice | currency:'EUR' }}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" style="margin: 1px;" (click)="Remove(item)">
+                            <span class="bi bi-trash" title="Remove"></span>
+                        </button>
+                        <button class="btn btn-success btn-sm" style="margin: 1px;" (click)="AddItem(item)">
+                            <span class="bi bi-patch-plus" title="Add item"></span>
+                        </button>
+                        <button class="btn btn-warning btn-sm" style="margin: 1px;" (click)="ReduceItem(item)">
+                            <span class="bi bi-patch-minus" title="Reduce item"></span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-4">
+            <div style="float: right;">
+                <p style="text-align: right;">Total: <strong>{{checkout.total | currency:'EUR' }}</strong></p>
+                <p style="text-align: right;">Discount: <strong>{{checkout.discount | currency:'EUR' }}</strong></p>
+                <p style="text-align: right;">Total With Discount: <strong>{{checkout.totalWithDiscount | currency:'EUR' }}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>

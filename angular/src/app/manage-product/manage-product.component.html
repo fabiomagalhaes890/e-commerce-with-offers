@@ -1,0 +1,83 @@
+<div style="margin: 10px">
+    <h2>Product Management</h2>
+    <hr>
+    <div class="row">
+        <div class="col-12" style="padding-bottom: 15px">
+            <button class="btn btn-secondary btn-sm" style="float: right;" (click)="BackToList()">Go Back list</button>
+        </div>
+        <div class="col-6">
+            <div class="col-12"><h4>Product informations</h4></div>
+            <hr>
+            <div class="col-12">
+                <label class="form-label">Product name</label>
+                <input disabled="true" class="form-control" value="{{currentProduct.name}}" />
+            </div>
+            <div class="col-12">
+                <label class="form-label">Product price</label>
+                <input disabled="true" class="form-control" value="{{currentProduct.price | currency:'EUR' }}" />
+            </div>
+            <hr>
+        </div>
+        <div class="col-6">
+            <div class="col-12"><h4>Offers</h4></div>
+            <hr>
+            <div class="col-12">
+                <label class="form-label">Offer name</label>
+                <input class="form-control" type="text" [(ngModel)]="currentOffer.name" />
+            </div>
+            <div class="col-12">
+                <label class="form-label">Promotional price</label>
+                <input class="form-control" type="text" (blur)="transform($event)" [(ngModel)]="currentOffer.price" />
+            </div>
+            <div class="col-12 row">
+                <div class="col-8">
+                    <label class="form-label">Quantity</label>
+                    <input class="form-control" type="number" [(ngModel)]="currentOffer.quantity" />
+                </div>
+                <div class="col-4 form-check form-switch">
+                    <div style="float: right; margin-top: 35px;">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" [(ngModel)]="currentOffer.status">
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col-12">
+                <button class="col-12 btn btn-success" style="float: right;" (click)="SaveOffers()">Save offer</button>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="col-12"><h4>Offers registered</h4></div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Options</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of offers">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.name}}</td>
+                        <td>{{item.status ? 'Active' : 'Inactive'}}</td>
+                        <td>{{item.price | currency:'EUR' }}</td>
+                        <td>
+                            <button class="btn btn-success btn-sm" style="margin: 1px;" (click)="SelectToEdit(item)">
+                                <span class="bi bi-pencil-square"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" style="margin: 1px;" (click)="RemoveItem(item)">
+                                <span class="bi bi-trash" title="Remove"></span>
+                            </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

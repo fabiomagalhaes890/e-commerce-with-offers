@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "kliR_db23*$"
+    ports:
+      - "1433:1433"
+  klir-tech-challenge-web-api:
+    image: klir-tech-challenge-web-api
+    build:
+      context: .
+      dockerfile: aspnet-core/Klir.TechChallenge.Web.Api/Dockerfile
+    depends_on:
+      - mssql-server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      DbServer: "mssql-server"
+      DbPort: "1433"
+      DbUser: "SA"
+      Password: "kliR_db23*$"
+      Database: "klirdbchallenge"
+    ports:
+      - 44300:80

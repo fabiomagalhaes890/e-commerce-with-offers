@@ -1,0 +1,36 @@
+{
+    "products": [
+      {
+        "price": 20,
+        "name": "Product A",
+        "id": 1
+      },
+      {
+        "price": 4,
+        "name": "Product B",
+        "id": 2
+      },
+      {
+        "price": 2,
+        "name": "Product C",
+        "id": 3
+      },
+      {
+        "price": 4,
+        "name": "Product D",
+        "id": 4
+      }
+    ],
+    "users": [
+      {
+        "type": "Admin",
+        "name": "Admin A",
+        "id": 1
+      },
+      {
+        "type": "Customer",
+        "name": "Customer A",
+        "id": 2
+      }
+    ]
+  }

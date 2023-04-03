@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Web.Api"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Tests", "aspnet-core\Klir.TechChallenge.Tests\Klir.TechChallenge.Tests.csproj", "{2698738B-6626-4968-814F-6B22068ACAEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Domain", "aspnet-core\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj", "{434EF5BA-D9D2-4C2D-8156-805C68FD638F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Domain", "aspnet-core\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj", "{434EF5BA-D9D2-4C2D-8156-805C68FD638F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Infrastructure", "aspnet-core\Klir.TechChallenge.Infrastructure\Klir.TechChallenge.Infrastructure.csproj", "{BAFDCB81-F45F-4C1B-850F-FABF938C8892}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Infrastructure", "aspnet-core\Klir.TechChallenge.Infrastructure\Klir.TechChallenge.Infrastructure.csproj", "{BAFDCB81-F45F-4C1B-850F-FABF938C8892}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Application", "aspnet-core\Klir.TechChallenge.Application\Klir.TechChallenge.Application.csproj", "{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Application", "aspnet-core\Klir.TechChallenge.Application\Klir.TechChallenge.Application.csproj", "{50F04D84-24CB-4E00-B3DE-14BCB9F7353F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.CrossCutting", "Klir.TechChallenge.CrossCutting\Klir.TechChallenge.CrossCutting.csproj", "{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.CrossCutting", "aspnet-core\Klir.TechChallenge.CrossCutting\Klir.TechChallenge.CrossCutting.csproj", "{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CD6BB241-7474-48E4-8647-9DB2CAE76159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86A86DF2-9B2A-4E77-B53F-127A9480D2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6BB241-7474-48E4-8647-9DB2CAE76159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6BB241-7474-48E4-8647-9DB2CAE76159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6BB241-7474-48E4-8647-9DB2CAE76159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6BB241-7474-48E4-8647-9DB2CAE76159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,6 @@
+<button class="btn btn-primary btn-sm  position-relative" title="Cart" (click)="RedirectToShopCart()">
+    <i class="bi bi-cart"></i>
+    <span *ngIf="total" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {{total}}
+    </span>
+</button>
