@@ -43,7 +43,8 @@ export class ShoppingCartComponent implements OnInit {
     if(this.shoppingCart.products) {
       this.checkoutService.Checkout(this.shoppingCart).subscribe({
         next: (data) => {
-          this.checkout = data;
+          this.shoppingCart = data;
+          this.storage.saveShoppingCart(this.shoppingCart);
         },
         error: (err) => {
           console.log('error:', err);

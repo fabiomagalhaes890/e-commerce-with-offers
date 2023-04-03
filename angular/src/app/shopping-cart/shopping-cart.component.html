@@ -13,15 +13,16 @@
             <button class="btn btn-secondary btn-sm" (click)="BackShopping()">Go Back shopping</button>
         </div>
         <hr style="padding-bottom: 15px">
-        <div class="col-8">
+        <div class="col-12">
             <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Product name</th>
-                    <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">Total price</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Promotion applied</th>
                     <th scope="col">Options</th>
                 </tr>
                 </thead>
@@ -29,9 +30,10 @@
                 <tr *ngFor="let item of shoppingCart.products">
                     <th scope="row">{{item.product.id}}</th>
                     <td>{{item.product.name}}</td>
-                    <td>{{item.product.price | currency:'EUR' }}</td>
                     <td>{{item.count }}</td>
+                    <td>{{item.product.price | currency:'EUR' }}</td>                    
                     <td>{{item.totalPrice | currency:'EUR' }}</td>
+                    <td>{{item.promoApplied }}</td>
                     <td>
                         <button class="btn btn-danger btn-sm" style="margin: 1px;" (click)="Remove(item)">
                             <span class="bi bi-trash" title="Remove"></span>
@@ -47,13 +49,8 @@
                 </tbody>
             </table>
         </div>
-
-        <div class="col-4">
-            <div style="float: right;">
-                <p style="text-align: right;">Total: <strong>{{checkout.total | currency:'EUR' }}</strong></p>
-                <p style="text-align: right;">Discount: <strong>{{checkout.discount | currency:'EUR' }}</strong></p>
-                <p style="text-align: right;">Total With Discount: <strong>{{checkout.totalWithDiscount | currency:'EUR' }}</strong></p>
-            </div>
+        <div class="col-12">
+            <h4>Total: {{shoppingCart.checkout.totalWithDiscount | currency: 'EUR'}}</h4>
         </div>
     </div>
 </div>

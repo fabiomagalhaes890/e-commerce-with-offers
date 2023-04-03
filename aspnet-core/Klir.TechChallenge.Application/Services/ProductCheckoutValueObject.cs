@@ -4,6 +4,7 @@
     {
         public int Count { get; set; }
         public decimal TotalPrice { get; set; }
+        public string? PromoApplied { get; set; }
         public ProductValueObject Product { get; set; }
     }
 }

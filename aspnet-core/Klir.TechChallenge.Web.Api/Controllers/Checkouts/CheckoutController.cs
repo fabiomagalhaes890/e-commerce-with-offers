@@ -16,7 +16,7 @@ namespace KlirTechChallenge.Web.Api.Controllers.Checkouts
         }
 
         [HttpPost]
-        [ProducesResponseType(200, Type = typeof(CheckoutValueObject))]
+        [ProducesResponseType(200, Type = typeof(ShoppingCartValueObject))]
         [ProducesResponseType(400)]
         public IActionResult Post([FromBody] ShoppingCartValueObject shoppingCartValueObject)
         {

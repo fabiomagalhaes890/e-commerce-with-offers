@@ -2,6 +2,6 @@
 {
     public interface ICheckoutService
     {
-        CheckoutValueObject Checkout(ShoppingCartValueObject shoppingCart);
+        ShoppingCartValueObject Checkout(ShoppingCartValueObject shoppingCart);
     }
 }

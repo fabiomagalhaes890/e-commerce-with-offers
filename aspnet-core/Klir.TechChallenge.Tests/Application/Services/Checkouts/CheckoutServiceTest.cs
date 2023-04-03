@@ -34,14 +34,7 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
         [Fact]
         public void Checkout_WithoutDiscount_ShouldReturns_CheckoutWithoutDiscount()
         {
-            var expected = new CheckoutValueObject
-            {
-                Discount = 0,
-                Total = 10,
-                TotalWithDiscount = 10
-            };
-
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>()
                 {
@@ -52,11 +45,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = 10
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = 0,
+                    Total = 10,
+                    TotalWithDiscount = 10
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);
@@ -75,14 +74,8 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
         {
             //Arrange
             _repository.Setup(x => x.GetActivatedProductById(It.IsAny<int>())).Returns(_offer_1);
-            var expected = new CheckoutValueObject
-            {
-                Discount = discount,
-                Total = total,
-                TotalWithDiscount = totalWithDiscount
-            };
 
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>() 
                 {
@@ -93,11 +86,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = total
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = discount,
+                    Total = total,
+                    TotalWithDiscount = totalWithDiscount
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);
@@ -118,14 +117,7 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
             _repository.Setup(x => x.GetActivatedProductById(1)).Returns(_offer_1);
             _repository.Setup(x => x.GetActivatedProductById(2)).Returns<Offer>(null);
 
-            var expected = new CheckoutValueObject
-            {
-                Discount = discount,
-                Total = total,
-                TotalWithDiscount = totalWithDiscount
-            };
-
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>()
                 {
@@ -142,11 +134,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = 10
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = discount,
+                    Total = total,
+                    TotalWithDiscount = totalWithDiscount
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);
@@ -166,14 +164,8 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
         {
             //Arrange
             _repository.Setup(x => x.GetActivatedProductById(It.IsAny<int>())).Returns(_offer_2);
-            var expected = new CheckoutValueObject
-            {
-                Discount = discount,
-                Total = total,
-                TotalWithDiscount = totalWithDiscount
-            };
 
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>()
                 {
@@ -184,11 +176,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = total
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = discount,
+                    Total = total,
+                    TotalWithDiscount = totalWithDiscount
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);
@@ -208,14 +206,8 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
         {
             //Arrange
             _repository.Setup(x => x.GetActivatedProductById(2)).Returns(_offer_2);
-            var expected = new CheckoutValueObject
-            {
-                Discount = discount,
-                Total = total,
-                TotalWithDiscount = totalWithDiscount
-            };
 
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>()
                 {
@@ -232,11 +224,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = total
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = discount,
+                    Total = total,
+                    TotalWithDiscount = totalWithDiscount
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);
@@ -248,14 +246,8 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
             //Arrange
             _repository.Setup(x => x.GetActivatedProductById(1)).Returns(_offer_1);
             _repository.Setup(x => x.GetActivatedProductById(2)).Returns(_offer_2);
-            var expected = new CheckoutValueObject
-            {
-                Discount = 20,
-                Total = 44,
-                TotalWithDiscount = 24
-            };
 
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>()
                 {
@@ -272,11 +264,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = 4
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = 20,
+                    Total = 44,
+                    TotalWithDiscount = 24
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);
@@ -288,14 +286,8 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
             //Arrange
             _repository.Setup(x => x.GetActivatedProductById(1)).Returns(_offer_1);
             _repository.Setup(x => x.GetActivatedProductById(2)).Returns(_offer_2);
-            var expected = new CheckoutValueObject
-            {
-                Discount = 22,
-                Total = 52,
-                TotalWithDiscount = 30
-            };
 
-            var shoppingCart = new ShoppingCartValueObject
+            var expected = new ShoppingCartValueObject
             {
                 Products = new List<ProductCheckoutValueObject>()
                 {
@@ -312,11 +304,17 @@ namespace Klir.TechChallenge.Tests.Application.Services.Checkouts
                         TotalPrice = 12
                     }
                 },
-                UserId = 2
+                UserId = 2,
+                Checkout = new CheckoutValueObject
+                {
+                    Discount = 22,
+                    Total = 52,
+                    TotalWithDiscount = 30
+                }
             };
 
             //Act
-            var actual = _service.Checkout(shoppingCart);
+            var actual = _service.Checkout(expected);
 
             //Assert
             actual.Should().BeEquivalentTo(expected);

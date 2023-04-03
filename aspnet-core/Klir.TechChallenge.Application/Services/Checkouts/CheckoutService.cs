@@ -11,30 +11,32 @@ namespace Klir.TechChallenge.Application.Services.Checkouts
             _repository = repository;
         }
 
-        public CheckoutValueObject Checkout(ShoppingCartValueObject shoppingCart)
+        public ShoppingCartValueObject Checkout(ShoppingCartValueObject shoppingCart)
         {
-            var response = new CheckoutValueObject();
-
+            shoppingCart.Checkout = new CheckoutValueObject();
             _ = shoppingCart.Products.Select(x =>
             {
                 var offer = _repository.GetActivatedProductById(x.Product.Id);
 
                 if (offer != null && x.Count >= offer.Quantity)
                 {
-                    response.Total += (x.Count * x.Product.Price);
-                    response.Discount += offer.CalculateDiscount(x.Count, x.Product.Price);
-                    response.TotalWithDiscount = (response.Total - response.Discount);
+                    shoppingCart.Checkout.Total += (x.Count * x.Product.Price);
+                    shoppingCart.Checkout.Discount += offer.CalculateDiscount(x.Count, x.Product.Price);
+                    shoppingCart.Checkout.TotalWithDiscount = (shoppingCart.Checkout.Total - shoppingCart.Checkout.Discount);
+                    x.PromoApplied = offer.Name;
+                    x.TotalPrice = (x.Count * x.Product.Price) - offer.CalculateDiscount(x.Count, x.Product.Price);
                 }
                 else
                 {
-                    response.TotalWithDiscount += (x.Count * x.Product.Price);
-                    response.Total += (x.Count * x.Product.Price);
+                    x.PromoApplied = string.Empty;
+                    shoppingCart.Checkout.TotalWithDiscount += (x.Count * x.Product.Price);
+                    shoppingCart.Checkout.Total += (x.Count * x.Product.Price);
                 }
 
-                return response;
+                return x;
             }).ToList();
 
-            return response;
+            return shoppingCart;
         }
     }
 }
