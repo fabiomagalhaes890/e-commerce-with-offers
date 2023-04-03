@@ -1,4 +1,5 @@
 using Klir.TechChallenge.Infrastructure.Context;
+using Klir.TechChallenge.Infrastructure.Errors;
 using Klir.TechChallenge.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,6 +51,11 @@ namespace KlirTechChallenge.Web.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>()!.CreateScope())
+            {
+                scope.ServiceProvider.GetRequiredService<KlirDbContext>().Database.Migrate();
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -58,6 +64,8 @@ namespace KlirTechChallenge.Web.Api
             }
 
             app.UseRouting();
+
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseCors(AllowSpecificOrigins);
 
