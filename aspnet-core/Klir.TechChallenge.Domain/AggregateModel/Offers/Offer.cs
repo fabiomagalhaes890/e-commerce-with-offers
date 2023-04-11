@@ -1,5 +1,4 @@
 ﻿using Klir.TechChallenge.Domain.Base;
-using System;
 
 namespace Klir.TechChallenge.Domain.AggregateModel.Offers
 {

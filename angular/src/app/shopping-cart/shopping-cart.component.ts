@@ -40,7 +40,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   CalculateCheckout() {
-    if(this.shoppingCart.products) {
+    if(this.shoppingCart.products.length > 0) {
       this.checkoutService.Checkout(this.shoppingCart).subscribe({
         next: (data) => {
           this.shoppingCart = data;
