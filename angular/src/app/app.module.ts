@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { AdminComponent } from './admin/admin.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    CurrencyMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

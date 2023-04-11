@@ -49,7 +49,7 @@ export class ManageProductComponent implements OnInit {
   }
 
   SelectToEdit(item: any) {
-    this.currentOffer = { ...item, price: '€'+ String(item.price) };
+    this.currentOffer = { ...item, price: item.price };
   }
 
   RemoveItem(item: any) {
@@ -61,14 +61,6 @@ export class ManageProductComponent implements OnInit {
       }
     });
     this.ngOnInit();
-  }
-
-  transform(event: any) {
-    if(event.target.value != undefined || event.target.value != '') {
-      var converted = new Intl.NumberFormat('de-DE',{style: 'currency', currency:'EUR'}).format(event.target.value);
-      this.currentOffer.price = event.target.value;
-      this.currentOffer.price = converted;
-    }    
   }
 
   Check(event: any) {

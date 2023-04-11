@@ -12,8 +12,6 @@ export class ManageProductService {
 
   PersistOffer(currentOffer: any)  : Observable<Array<any>> {
     let offer = currentOffer;
-    if(currentOffer.price.indexOf("€") != -1)
-      offer.price = parseFloat(currentOffer.price.replace("€", ""));
 
     if(offer.id == 0) {
       return this.http.post<any>(`${this.url}`, offer).pipe(

@@ -27,7 +27,7 @@
             </div>
             <div class="col-12">
                 <label class="form-label">Promotional price</label>
-                <input class="form-control" type="text" (blur)="transform($event)" [(ngModel)]="currentOffer.price" />
+                <input class="form-control" type="text" currencyMask [(ngModel)]="currentOffer.price" [options]="{ align: 'left' ,prefix: '€ ', thousands: '.', decimal: ',' }"/>
             </div>
             <div class="col-12 row">
                 <div class="col-8">
