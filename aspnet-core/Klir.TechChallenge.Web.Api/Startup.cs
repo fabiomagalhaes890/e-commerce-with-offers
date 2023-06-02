@@ -33,11 +33,11 @@ namespace KlirTechChallenge.Web.Api
 
             services.AddSwaggerGen();
 
-            var connectionString = Configuration.GetConnectionString("default");
-            services.AddDbContext<KlirDbContext>(options => options.UseSqlServer(connectionString));
-            services.AddScoped<DbContext, KlirDbContext>();
+            services.RegisterDatabase(Configuration);
 
             services.RegisterServices();
+
+            services.RegisterMediatr();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Klir.TechChallenge.Infrastructure.Migrations
 {
     [DbContext(typeof(KlirDbContext))]
-    [Migration("20230402232703_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230602170941_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
